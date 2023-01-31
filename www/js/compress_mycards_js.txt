@@ -1,0 +1,12 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file mycards.min.js \
+    mycards_src/00-mycards.js
+
+cd /Library/WebServer/Documents/js
+
+
+    <script src="/js/mycards.min.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+    <script src="/js/mycards_src/00-mycards.js?date=<?php echo $UPDATE_DATE;?>"></script>

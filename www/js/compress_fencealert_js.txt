@@ -1,0 +1,7 @@
+//
+// compress sections JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file fencealert.min.js \
+    fencealert_src/00-fencealert.js
+
+cd /Library/WebServer/Documents/js

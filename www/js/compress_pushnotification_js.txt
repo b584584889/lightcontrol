@@ -1,0 +1,15 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file pushnotification.min.js \
+    pushnotification_src/00-datetimepicker.js \
+    pushnotification_src/01-pushnotification.js \
+    storageimage_src/02-uploadimage.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/pushnotification.min.js"></script>
+
+<script src="/js/pushnotification_src/00-datetimepicker.js"></script>
+<script src="/js/pushnotification_src/01-pushnotification.js"></script>
+<script src="/js/storageimage_src/02-uploadimage.js?date=<?php echo $UPDATE_DATE;?>"></script>

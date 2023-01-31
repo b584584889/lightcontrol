@@ -1,0 +1,11 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file survey.min.js \
+    survey_src/00-survey.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/survey.min.js"></script>
+
+<script src="/js/survey_src/00-survey.js"></script>

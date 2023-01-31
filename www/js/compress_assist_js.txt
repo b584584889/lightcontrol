@@ -1,0 +1,11 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file assist.min.js \
+    assist_src/00-assist.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/assist.min.js"></script>
+
+<script src="/js/assist_src/00-assist.js"></script>

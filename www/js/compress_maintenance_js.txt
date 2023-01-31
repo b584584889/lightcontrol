@@ -1,0 +1,12 @@
+//
+// compress location JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file maintenance.min.js \
+    maintenance_src/00-maintenance.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/maintenance.min.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+<script src="/js/maintenance_src/00-maintenance.js?date=<?php echo $UPDATE_DATE;?>"></script>

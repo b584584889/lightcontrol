@@ -1,0 +1,526 @@
+@charset "utf-8";
+
+BODY
+{
+	background: #666263;
+	height: 100%;
+}
+#header
+{
+	display: block;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background: #ececec; /*#6cf;*/
+	text-align: center;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#pagefooter
+{
+	display: block;
+	clear: both;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #ececec; /*#6cf;*/
+	text-align: center;
+	margin-right: 0px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#breadcrumb {
+width:590px;
+height:30px;
+font-family:Arial, Helvetica, sans-serif;
+/*font-size:11px;*/
+text-align:left;
+color:#666666;
+padding:5px;
+}
+
+
+#breadcrumb a {
+font-family:Arial, Helvetica, sans-serif;
+/*font-size:11px;*/
+color:#663399;
+padding-left:5px;
+}
+
+.textareatab
+{
+	background:#E8F9D7;
+	border:1px solid #069;
+	height:150px;
+	width:580px;
+}
+.commenttextarea
+{
+	border:1px solid #069;
+	height:150px;
+	width:580px;
+}
+h1
+{
+	color:#069;
+	text-align:center;
+	margin-bottom:-15px;
+}
+h3
+{
+	color:#069;
+	text-align:left;
+	padding-top:10px;
+}
+
+.em
+{
+	text-align:right;
+	margin-right:30px;
+}
+table
+{
+	text-align:center;
+	background:#E8F9D7;
+	border: 1px solid #336601;
+}
+
+table.paratable{
+background-color:#ffffff;
+border:1px solid #c3c3c3;
+border-collapse:collapse;
+width:100%;
+}
+
+table.paratable th{
+background-color:#e5eecc;
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:top;
+text-align:left;
+}
+
+table.paratable td{
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:top;
+text-align: left;
+}
+
+img,a img{
+border:0;
+margin:0;
+padding:0;
+max-width:590px;
+width:expression(this.width>590?"590px":this.width);
+max-height:590px;
+/*height:expression(this.height>50?"50px":this.height);*/
+}
+
+#leftadbar
+{
+	float:left;
+	width:165px;
+}
+#rightadbar
+{
+	float:left;
+    padding-left:5px;
+	width:170px;
+}
+#dbarticlecontainer
+{
+	float:left;
+	width:600px;
+	height:auto;
+	background: #ffffff;
+	margin: auto;
+	text-align:center;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#mainformula
+{
+	height:auto !important;
+	width:600px;
+	text-align:center;
+}
+.mainformulacolor
+{
+	height:auto !important;
+	background:#E8F9D7;
+	border:1px solid #069;
+	width:600px;
+}
+
+.formulaparameter
+{
+	float:left;
+	width:580px;
+	margin:2px 0px 1px 0px;
+}
+
+.mfpara
+{
+	width:600px;
+	background:#E8F9D7;
+	text-align:center;
+	padding-bottom:5px;
+}
+.mfparaleft
+{
+	width:205px;
+	float:left !important;
+	text-align:right;
+	font-weight:bold;
+	margin-right:30px;
+}
+
+.mfpararight
+{
+	text-align:left;
+}
+
+#calculator
+{
+	height:auto !important;
+	width:600px;
+}
+
+.calculatorbox
+{
+	height:auto !important;
+	 text-align:center;
+	 width: 580px;
+	 clear:both;
+	 margin-top:0px;
+	 border-top:none;
+	 margin-left:8px;
+}
+
+.calculate
+{
+	 overflow:hidden;
+	 height:auto;
+	 text-align:center;
+	 width: 590px;
+	 border:1px solid #069;
+	 background:#E8F9D7;
+	 padding-bottom:10px;
+}
+
+.calculateresult
+{
+	border-color:#069;
+	width:62px;
+	border-style:solid;
+	background:#E8F9D7;
+	color:#000;
+	font-size:11px;
+	/*border-width:thin;*/
+	height:18px;
+}
+.calculatebutton
+{
+	text-align:left;
+	width:87px;
+}
+
+.calculatetext
+{
+	width:60px;
+}
+.calculateselect
+{
+	width:120px;
+	height:21px;
+	margin-left:3px;
+	vertical-align:middle;
+}
+
+
+.calculatorleft
+{
+
+	text-align:right;
+	/*font-weight:bold;*/
+	float:left;
+	width:300px;
+
+}
+.calculatorright
+{
+	width:250px;
+	float:left;
+	text-align:left;
+	margin-left:15px;
+}
+
+#code
+{
+	height:auto !important;
+	width:600px;
+	text-align:center;
+}
+.Menubox ul
+{
+	list-style:none;
+	height:25px;
+	background:#fff;
+	width:480px;
+	/*margin-left:-10px;*/
+	margin-bottom:-20px;
+
+}
+#References ul
+{
+	list-style:none;
+	height:25px;
+	background:#fff;
+	width:480px;
+	/*margin-left:-32px;*/
+	margin-bottom:-20px;
+
+}
+.copycodebutton
+{
+	height:27px !important;
+	margin:-6px -15px 0px 0px;
+}
+.Menubox
+{
+	width:600px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+}
+.Menubox li
+{
+	margin-left:1px;
+	 height:25px;
+	 float:left;
+	 display:block;
+	 cursor:pointer;
+	 width:114px;
+	 text-align:center;
+	 color:#fff;
+	 font-weight:bold;
+	 background:#069;
+	 margin-bottom:2px;
+ }
+.Menubox li.hover
+{
+	 padding:0px;
+	 background:#E8F9D7;
+	 width:116px;
+	 color:#036;
+	 font-weight:bold;
+	 height:25px;
+	 line-height:27px;
+}
+
+.codecontentbox
+{
+	 margin-left: 8px;
+	 text-align:center;
+	 width: 580px;
+	 clear:both;
+	 margin-top:0px;
+	 border-top:none;
+	 height:auto;
+	 text-align:left;
+}
+.commentcontentbox
+{
+	 margin-left: 8px;
+	 text-align:center;
+	 width: 580px;
+	 clear:both;
+	 margin-top:0px;
+	 border-top:none;
+	 height:auto !important;
+	 text-align:left;
+}
+#References
+{
+	width:600px;
+	height:auto !important;
+	clear:both !important;
+	text-align:left;
+}
+#comment
+{
+	text-align:left;
+}
+
+#login
+{
+	text-align:center;
+}
+.logintable
+{
+	width:380px;
+	border:none;
+	background:#FFF;
+	margin:auto;"
+}
+#login label
+{
+	font-size:18px;
+	font-weight:bold;
+}
+.information
+{
+	text-align:left;
+	line-height:30px;
+}
+.log
+{
+	font-size:28px;
+	font-weight:bold;
+	color:#06C;
+	width:100px;
+	text-align:center;
+}
+.cell
+{
+ vertical-align: middle;
+ padding: 0px 30px 0px 30px;
+}
+.word {
+position: absolute;
+margin-top: 50px;
+background-color: white;
+margin-left:-10px;
+padding: 5px;
+}
+.line {
+width: 1px;
+border-left: solid 1px #999;
+height: 8em;
+margin: auto;
+}
+.inputinformation
+{
+	width:200px;
+	max-width:200px;
+	size:150px;
+}
+#post
+{
+   text-align:center;
+   margin-bottom:50px;
+   margin-top:20px;
+   margin-left:auto !important;
+   margin-right:auto !important;
+}
+.postbutton
+{
+	font-size:16px;
+	text-align:center;
+}
+.contentdisplay
+{
+	display:none;
+}
+.parameterleft
+{
+	text-align:right;
+	font-weight:bold;
+	float:left;
+	width:200px;
+}
+.parameterright
+{
+	width:250px;
+	float:left;
+	text-align:left;
+	margin-left:30px;
+}
+.buttonright
+{
+	width:580px;
+	text-align:right;
+}
+.calculateformula
+{
+	padding-top:5px;
+	padding-bottom:5px;
+	text-align:center;
+	vertical-align:middle;
+	width:580px;
+}
+
+.commentcontent
+{
+	width:580px;
+}
+
+/*share*/
+.sharediv22
+{
+    clear: both;
+    display: block;
+    font-size: 0;
+	border-color: #DADADA;
+	position: relative;
+	border-style: solid;
+    border-width: 1px 0;
+    padding: 3px 0 5px;
+	margin: 0;
+	direction: ltr;
+	font: 11px/1.231 arial,helvetica,clean,sans-serif;
+	/*color: #000000;*/
+	margin-top: 5px;
+	margin-bottom: 5px;
+    font-size: 11px;
+}
+.shareul
+{
+	margin: 0;
+    padding: 0;
+	font-size: 11px;
+	/*border-style: solid;color: #000000;*/
+	direction: ltr;
+	font: 11px/1.231 arial,helvetica,clean,sans-serif;
+	text-align:right
+}
+.shareulli
+{
+	display: inline;
+	list-style-type: none;
+}
+.shareulfacebook
+{
+	min-width: 200px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: inline;
+	list-style-type: none;
+}
+
+.shareulli-a
+{
+	text-decoration:none;
+	background:url(http://www.wikicalculator.com/img/print_small_btn.png) no-repeat transparent;
+	vertical-align:middle;
+    margin-top: 2px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 20px;
+	padding-bottom: 20px;
+
+}
+
+.shareulli-a-span
+{
+	background-image: none;
+    color: #0F4D8B;
+	padding-left: 20px;
+	margin-top:10px;
+}

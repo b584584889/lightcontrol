@@ -1,0 +1,13 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file activity.min.js \
+    activity_src/00-activity.js \
+    activity_src/01-sensorinfo.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/activity.min.js"></script>
+
+<script src="/js/activity_src/00-activity.js"></script>
+<script src="/js/activity_src/01-sensorinfo.js"></script>

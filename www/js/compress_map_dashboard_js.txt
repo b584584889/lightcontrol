@@ -1,0 +1,24 @@
+//
+// compress map_live JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file map_dashboard.min.js \
+    map_dashboard_src/00-raphael.js \
+    map_dashboard_src/01-morris.js \
+    map_dashboard_src/02-jquery.knob.js \
+    map_dashboard_src/03-Leaflet.ImageOverlay.Rotated.js \
+    map_dashboard_src/04-mapapi.js \
+    map_dashboard_src/05-Indoor2DMap.js \
+    map_dashboard_src/06-LiveMap.js
+
+
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/map_dashboard_src/00-raphael.js"></script>
+<script src="/js/map_dashboard_src/01-morris.js"></script>
+<script src="/js/map_dashboard_src/02-jquery.knob.js"></script>
+<script src="/js/map_dashboard_src/03-Leaflet.ImageOverlay.Rotated.js"></script>
+<script src="/js/map_dashboard_src/04-mapapi.js"></script>
+<script src="/js/map_dashboard_src/05-Indoor2DMap.js"></script>
+<script src="/js/map_dashboard_src/06-LiveMap.js"></script>

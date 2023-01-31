@@ -1,0 +1,9 @@
+//
+// compress map_live JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file firefightingreport.min.js \
+    firefightingreport_src/00-report.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/firefightingreport_src/00-report.js"></script>

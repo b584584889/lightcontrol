@@ -1,0 +1,11 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file userinfo.min.js \
+    storageimage_src/02-uploadimage.js \
+    userinfo_src/00-userinfo.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/userinfo_src/00-userinfo.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storageimage_src/02-uploadimage.js?date=<?php echo $UPDATE_DATE;?>"></script>

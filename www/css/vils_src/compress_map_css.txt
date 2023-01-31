@@ -1,0 +1,5 @@
+//
+//
+Drag files to Minify(Mac OS app)
+
+change name all.min.css to vils.min.css

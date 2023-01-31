@@ -1,0 +1,7 @@
+//
+// compress sections JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file sections.min.js \
+    sections_src/00-section_group.js
+
+cd /Library/WebServer/Documents/js

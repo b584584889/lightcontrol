@@ -1,0 +1,9 @@
+//
+// compress diagnosis JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file diagnosis.min.js \
+    diagnosis_src/00-diagnosis.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/diagnosis_src/00-diagnosis.js"></script>

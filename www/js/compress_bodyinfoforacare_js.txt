@@ -1,0 +1,17 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file bodyinfoforacare.min.js \
+    bodyinfoforacare_src/00-raphael.js \
+    bodyinfoforacare_src/01-morris.js \
+    bodyinfoforacare_src/02-jquery.knob.js \
+    bodyinfoforacare_src/03-bodyinfoforacare.js
+
+cd /Library/WebServer/Documents/js
+
+
+
+<script src="/js/bodyinfo_src/00-raphael.js"></script>
+<script src="/js/bodyinfo_src/01-morris.js"></script>
+<script src="/js/bodyinfo_src/02-jquery.knob.js"></script>
+<script src="/js/bodyinfo_src/03-bodyinfoforacare.js"></script>

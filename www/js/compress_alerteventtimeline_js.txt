@@ -1,0 +1,23 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file alerteventtimeline.min.js \
+    alerteventtimeline_src/00-howler.core.js \
+    alerteventtimeline_src/01-alerteventtimeline.js \
+    alerteventtimeline_src/02-sosevent.js \
+    alerteventtimeline_src/03-checkpointevent.js \
+    alerteventtimeline_src/04-fencealertevent.js \
+    alerteventtimeline_src/05-helpsound.js \
+    alerteventtimeline_src/06-eventtimeline.js
+
+
+cd /Users/ikki/DecaWave/SMIMS/ubuntu/norgay/www/js
+
+
+<script src="/js/alerteventtimeline_src/00-howler.core.js"></script>
+<script src="/js/alerteventtimeline_src/01-alerteventtimeline.js"></script>
+<script src="/js/alerteventtimeline_src/02-sosevent.js"></script>
+<script src="/js/alerteventtimeline_src/03-checkpointevent.js"></script>
+<script src="/js/alerteventtimeline_src/04-fencealertevent.js"></script>
+<script src="/js/alerteventtimeline_src/05-helpsound.js"></script>
+<script src="/js/alerteventtimeline_src/06-eventtimeline.js"></script>

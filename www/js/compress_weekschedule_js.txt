@@ -1,0 +1,10 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file weekschedule.min.js \
+    weekschedule_src/00-weekschedule.js
+
+
+    <script src="/js/weekschedule_src/00-weekschedule.js"></script>
+
+cd /Library/WebServer/Documents/js

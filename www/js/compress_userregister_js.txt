@@ -1,0 +1,9 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file userregister.min.js \
+    userregister_src/00-userregister.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/userregister_src/00-userregister.js"></script>

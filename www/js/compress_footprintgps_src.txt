@@ -1,0 +1,12 @@
+//
+// compress footprintgps JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file footprintgps.min.js \
+    footprintgps_src/00-daterangepicker.js \
+    footprintgps_src/01-footprintgps.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/footprintgps_src/00-daterangepicker.js"></script>
+<script src="/js/footprintgps_src/01-footprintgps.js"></script>

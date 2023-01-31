@@ -1,0 +1,19 @@
+{
+    "protocol": "sftp",
+    "host": "175.181.35.22",
+    "port": 22,
+    "user": "smims",
+    "pass": "smims2017",
+    "promptForPass": false,
+    "remote": "/Users/smims/soccer/app",
+    "agent": "",
+    "privatekey": "",
+    "passphrase": "",
+    "hosthash": "",
+    "ignorehost": true,
+    "connTimeout": 10000,
+    "keepalive": 10000,
+    "keyboardInteractive": false,
+    "watch": [],
+    "watchTimeout": 500
+}

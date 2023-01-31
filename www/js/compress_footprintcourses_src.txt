@@ -1,0 +1,14 @@
+//
+// compress footprintcourses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file footprintcourses.min.js \
+    footprintcourses_src/00-daterangepicker.js \
+    footprintcourses_src/01-bootstrap-datepicker.js \
+    footprintcourses_src/02-footprintcourses.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/footprintcourses_src/00-daterangepicker.js"></script>
+<script src="/js/footprintcourses_src/01-bootstrap-datepicker.js"></script>
+<script src="/js/footprintcourses_src/02-footprintcourses.js"></script>

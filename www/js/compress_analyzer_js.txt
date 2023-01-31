@@ -1,0 +1,16 @@
+//
+// compress analyzer JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file analyzer.min.js \
+    analyzer_src/00-leaflet.js \
+    analyzer_src/01-leaflet.draw.js \
+    analyzer_src/02-mapapi.js \
+    analyzer_src/03-Indoor2DMap.js \
+    analyzer_src/04-jquery.csv.js \
+    analyzer_src/05-htmlparser.js \
+    analyzer_src/06-html2json.js \
+    analyzer_src/07-analyzer.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/analyzer.min.js"></script>

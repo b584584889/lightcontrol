@@ -1,0 +1,12 @@
+//
+// compress etimeline JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file etimeline.min.js \
+    etimeline_src/00-eventtimeline.js
+
+
+cd /Users/ikki/DecaWave/SMIMS/ubuntu/norgay/www/js
+
+
+
+    <script src="/js/etimeline_src/00-eventtimeline.js"></script>

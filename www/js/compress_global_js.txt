@@ -1,0 +1,9 @@
+//
+// compress global JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file global.min.js \
+    00-global.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/global.min.js"></script>

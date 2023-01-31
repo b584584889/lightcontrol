@@ -1,0 +1,9 @@
+//
+// compress ranging JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file cardscanuhfresult.min.js \
+    cardscanuhfresult_src/00-cardscanuhfresult.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/cardscanuhfresult.min.js"></script>

@@ -1,0 +1,244 @@
+
+
+SRC+=VILS_RTLS.cpp
+SRC+=common.cpp
+SRC+=testdata.cpp
+SRC+=DataParser/DataParser.cpp
+SRC+=DeviceManager/DeviceManager.cpp
+SRC+=DeviceManager/AreaInOutDataClass.cpp
+SRC+=DeviceManager/TagInOutDataClass.cpp
+SRC+=PosCalculate/PosCalculate.cpp
+SRC+=PosCalculate/AnchorTagCoupleDataClass.cpp
+SRC+=PosCalculate/AnchorRangingDataClass.cpp
+SRC+=PosCalculate/algorithm.cpp
+SRC+=PosCalculate/SmoothingResult.cpp
+SRC+=PosCalculate/RayCasting.cpp
+SRC+=PowerTagCalculate/PowerTagCalculate.cpp
+SRC+=DOP/DOPResolve.cpp
+SRC+=Simulation/Simulation.cpp
+SRC+=Simulation/SimulationPowerTag.cpp
+SRC+=Events/EventChecker.cpp
+SRC+=network/HttpException.cpp
+SRC+=network/HttpRequest.cpp
+SRC+=network/HttpResponse.cpp
+SRC+=network/UDPServer.cpp
+SRC+=network/UDPClient.cpp
+SRC+=network/TCPServer.cpp
+SRC+=network/MulticastServer.cpp
+SRC+=network/MulticastClient.cpp
+SRC+=network/WorkItem.cpp
+SRC+=network/DataItem.cpp
+SRC+=network/UDPDataItem.cpp
+SRC+=network/SocketPing.cpp
+SRC+=network/NotificationItem.cpp
+SRC+=mysql/TimeSerialsDBAccess.cpp
+SRC+=mysql/MySQLDBAccess.cpp
+SRC+=mysql/TrackDBAccess.cpp
+SRC+=mysql/FootprintDBAccess.cpp
+SRC+=mysql/ConfigDBAccess.cpp
+SRC+=mysql/DBManager.cpp
+SRC+=Simulation/SimulationMoving.cpp
+SRC+=Simulation/SimulationSitting.cpp
+SRC+=logger/log.cpp
+SRC+=logger/Logger.cpp
+SRC+=CSV/CSVRow.cpp
+SRC+=websocket/WebSocketServer.cpp
+SRC+=websocket/WebSocketClient.cpp
+SRC+=websocket/SubscribeDataItem.cpp
+SRC+=Inspection/InspectionAnchorRangingDataClass.cpp
+SRC+=Inspection/InspectionRangingDataClass.cpp
+
+SRC+=ServiceThreads/Thread.cpp
+SRC+=ServiceThreads/CenterWebSocketService.cpp
+SRC+=ServiceThreads/MySQLServiceLoopThread.cpp
+SRC+=ServiceThreads/CoordIncomingService.cpp
+SRC+=ServiceThreads/CoordMsgParserService.cpp
+SRC+=ServiceThreads/CenterOutgoingService.cpp
+SRC+=ServiceThreads/MQTTSubscribeService.cpp
+SRC+=ServiceThreads/MQTTPublishService.cpp
+SRC+=ServiceThreads/MQTTProcessingService.cpp
+SRC+=ServiceThreads/WebUDPAPIService_DMATEK.cpp
+SRC+=ServiceThreads/WebUDPAPIService.cpp
+SRC+=ServiceThreads/WebUDPParserService.cpp
+SRC+=ServiceThreads/DeviceEventCheckService.cpp
+SRC+=ServiceThreads/BroadcastIPService.cpp
+SRC+=ServiceThreads/BroadcastDevicesService.cpp
+SRC+=ServiceThreads/PosCalculateService.cpp
+SRC+=ServiceThreads/DataParserService.cpp
+SRC+=ServiceThreads/WebSocketEventCheckService.cpp
+SRC+=ServiceThreads/InspectionGroupService.cpp
+SRC+=ServiceThreads/CoursesService.cpp
+SRC+=ServiceThreads/AnalyzeFootprintService.cpp
+SRC+=ServiceThreads/AnalyzeTrackService.cpp
+SRC+=ServiceThreads/AnalyzeNodePosOffsetService.cpp
+SRC+=ServiceThreads/AnalyzeDashBoardService.cpp
+SRC+=ServiceThreads/PingDeviceService.cpp
+SRC+=ServiceThreads/TrackDBService.cpp
+SRC+=ServiceThreads/AreaRollCallService.cpp
+SRC+=ServiceThreads/PushNotificationService.cpp
+SRC+=ServiceThreads/CoordCommandService.cpp
+SRC+=ServiceThreads/SyncERPService.cpp
+SRC+=ServiceThreads/FootprintDBService.cpp
+SRC+=ServiceThreads/CheckEmployeeActionService.cpp
+SRC+=ServiceThreads/ForacareService.cpp
+SRC+=ServiceThreads/GAEService.cpp
+SRC+=ServiceThreads/CARDRollCallService.cpp
+SRC+=ServiceThreads/CHTIoTService.cpp
+SRC+=ServiceThreads/AssistService.cpp
+SRC+=ServiceThreads/SensorInfoService.cpp
+SRC+=ServiceThreads/MQProcessingService.cpp
+SRC+=ServiceThreads/FireFightingService.cpp
+SRC+=ServiceThreads/KIAService.cpp
+SRC+=ServiceThreads/SimulationService.cpp
+SRC+=sqlite3/AnalyzeDashBoardDBAccess.cpp
+SRC+=sqlite3/InspectionInfoDBAccess.cpp
+SRC+=sqlite3/AreaRollCallInfoDBAccess.cpp
+
+LIBSRC+=json/json_reader.cpp
+LIBSRC+=json/json_value.cpp
+LIBSRC+=json/json_writer.cpp
+LIBSRC+=json/JSONAgent.cpp
+LIBSRC+=Math/Matrix.cpp
+LIBSRC+=Math/LUDecomposition.cpp
+LIBSRC+=Math/QRDecomposition.cpp
+LIBSRC+=Math/Vector3.cpp
+LIBSRC+=Math/leastsquares/ResidualsFunction.cpp
+LIBSRC+=Math/leastsquares/NonLinearSolver.cpp
+LIBSRC+=Filters/kalman/Kalman3D.cpp
+LIBSRC+=Filters/kalman/Kalman1D.cpp
+LIBSRC+=Filters/kalman/Kalman.cpp
+LIBSRC+=Filters/SmoothingFilter/SmoothingFilter.cpp
+LIBSRC+=Filters/WeightedMovingAverageFilter/WeightedMovingAverageFilter.cpp
+LIBSRC+=MQTT/MQTTDataItem.cpp
+LIBSRC+=MQTT/MQTTClient/linux.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTPacket.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTConnectClient.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTDeserializePublish.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTSerializePublish.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTSubscribeClient.cpp
+LIBSRC+=MQTT/MQTTPacket/MQTTUnsubscribeClient.cpp
+LIBSRC+=MQTT/LoRAGateway.cpp
+LIBSRC+=date/tz.cpp
+LIBSRC+=bmp/qdbmp.cpp
+LIBSRC+=QRcode/qrcode.cpp
+LIBSRC+=pdf/PDFCreater.cpp
+LIBSRC+=htmlcxx/html/ParserDom.cpp
+LIBSRC+=htmlcxx/html/ParserSax.cpp
+LIBSRC+=htmlcxx/html/Node.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLAbstractXMLFile_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLAppProperties_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLContentTypes_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLCoreProperties_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLDocument_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLRelationships_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLSharedStrings_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLTokenizer_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLWorkbook_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLChartsheet_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLColumn_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLColor_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLRow_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLSheet_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLWorksheet_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLCell_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLCellRange_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLCellReference_Impl.cpp
+LIBSRC+=XLSX/openxlsx/implementation/sources/XLCellValue_Impl.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLDocument.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLWorkbook.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLSheet.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLWorksheet.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLCellReference.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLCell.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLCellValue.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLCellRange.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLChartsheet.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLRow.cpp
+LIBSRC+=XLSX/openxlsx/interfaces/c++/sources/XLColumn.cpp
+LIBSRC+=XLSX/pugixml/pugixml.cpp
+LIBSRC+=MQ/AMQCPPConnectionHandler.cpp
+LIBSRC+=MQ/TestBase.cpp
+LIBSRC+=MQ/RmqMgrBase.cpp
+LIBSRC+=LLRP/LLRPController.cpp
+LIBSRC+=LLRP/ltkcpp_array.cpp
+LIBSRC+=LLRP/ltkcpp_connection.cpp
+LIBSRC+=LLRP/ltkcpp_element.cpp
+LIBSRC+=LLRP/ltkcpp_encdec.cpp
+LIBSRC+=LLRP/ltkcpp_error.cpp
+LIBSRC+=LLRP/ltkcpp_framedecode.cpp
+LIBSRC+=LLRP/ltkcpp_frameencode.cpp
+LIBSRC+=LLRP/ltkcpp_frameextract.cpp
+LIBSRC+=LLRP/ltkcpp_genout.cpp
+LIBSRC+=LLRP/ltkcpp_hdrfd.cpp
+LIBSRC+=LLRP/ltkcpp_typeregistry.cpp
+LIBSRC+=LLRP/ltkcpp_xmltextdecode.cpp
+LIBSRC+=LLRP/ltkcpp_xmltextencode.cpp
+
+OBJDIR = obj
+OBJS = $(patsubst %.cpp, %.o, $(SRC))
+OUT_OBJS=$(addprefix $(OBJDIR)/, $(OBJS))
+
+LIBOBJDIR = libobj
+LIBOBJS = $(patsubst %.cpp, %.o, $(LIBSRC))
+OUT_LIBOBJS=$(addprefix $(LIBOBJDIR)/, $(LIBOBJS))
+
+SQLITE3_SRC = sqlite3/sqlite3.c
+SQLITE3_OBJS=$(SQLITE3_SRC:.c=.o)
+
+BOOST_DIR = /opt/homebrew/opt/boost
+OPENSSL_DIR = /opt/homebrew/opt/openssl@1.1
+
+MYSQL_CONCPP_DIR = /Users/smims/MySQL/mysql-connector-c++-8.0
+MYSQLLIBPATH = -L$(MYSQL_CONCPP_DIR)/lib64
+MYSQLLIBHEADER = -I$(MYSQL_CONCPP_DIR)/include -I$(MYSQL_CONCPP_DIR)/include/jdbc  -I$(BOOST_DIR)/include -L/opt/homebrew/opt/zstd/lib
+WEBSOCKETPATH = -L$(BOOST_DIR)/lib
+WEBSOCKETHEADER = -I$(BOOST_DIR)/include -I$(OPENSSL_DIR)/include -I./websocket/
+WEBSOCKETLIB = -lboost_system -lboost_chrono -lcurl
+
+PDFLIBDIR = /opt/homebrew/opt/libharu
+PDFLIBPATH = -L$(PDFLIBDIR)/lib
+PDFLIBHEADER = -I$(PDFLIBDIR)/include
+PDFLIB = -lhpdf -liconv
+
+XLSXLIBHEADER = -I./XLSX/openxlsx/ -I./XLSX/openxlsx/implementation/headers/ -I./XLSX/openxlsx/interfaces/c++/headers/ -I./XLSX/pugixml/ -I./XLSX/zippy/
+
+AMQCPPLIBHEADER = -I./MQ/include
+AMQCPPLIBPATH = -L./MQ -L/opt/homebrew/opt/libevent/lib
+AMQCPPLIB = -lamqpcpp -levent -lboost_thread-mt
+
+CFLAGS = -Wall -c -DSQLITE_THREADSAFE=2
+LDLIBS = $(MYSQL_CONCPP_DIR)/lib64/libmysqlcppconn-static.a -lzstd -lz -lpthread $(OPENSSL_DIR)/lib/libssl.a  $(OPENSSL_DIR)/lib/libcrypto.a -lxml2 -lresolv -lcurl -ldl
+#CC = gcc
+
+CXX = clang++ -std=c++20 -stdlib=libc++
+CXXFLAGS = -Wall -D__STDC_LIMIT_MACROS -DCPPCONN_PUBLIC_FUNC= -I/opt/homebrew/opt/libxml2/include/libxml2 -g -O0
+
+.PHONY: all soccerapp clean
+
+All: backup soccerapp
+
+release: backup cleanAll soccerapp
+
+backup:
+	cp soccerapp soccerapp_old | true
+
+soccerapp: $(OUT_OBJS) $(OUT_LIBOBJS) $(SQLITE3_OBJS)
+	$(CXX) $(LDFLAGS) $(OUT_OBJS) $(OUT_LIBOBJS) $(SQLITE3_OBJS) $(MYSQLLIBHEADER) $(WEBSOCKETHEADER) $(LDLIBS) $(PDFLIBPATH) $(WEBSOCKETPATH) $(WEBSOCKETLIB) $(PDFLIB) $(AMQCPPLIBPATH) $(AMQCPPLIB) -o $@
+
+$(OBJDIR)/%.o: %.cpp
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(MYSQLLIBHEADER) $(WEBSOCKETHEADER) $(MQTT_HEADER) $(PDFLIBHEADER) $(XLSXLIBHEADER) $(AMQCPPLIBHEADER) -c $< -o $@
+
+$(LIBOBJDIR)/%.o: %.cpp
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(MYSQLLIBHEADER) $(WEBSOCKETHEADER) $(MQTT_HEADER) $(PDFLIBHEADER) $(XLSXLIBHEADER) $(AMQCPPLIBHEADER) -c $< -o $@
+
+%.o: %.c
+	$(CC) $(LDFLAGS) $(CFLAGS) $(LDLIBS) -c $< -o $@
+
+# remove object files and executable when user executes "make clean"
+clean:
+	rm -rf $(OBJDIR)/DeviceManager $(OBJDIR)/logger $(OBJDIR)/MQTT $(OBJDIR)/MQ $(OBJDIR)/network $(OBJDIR)/mysql $(OBJDIR)/ServiceThreads $(OBJDIR)/*.o soccerapp
+
+cleanAll:
+	rm -rf $(OBJDIR) sqlite3/sqlite3.o soccerapp

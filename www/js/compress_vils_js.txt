@@ -1,0 +1,11 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file vils.min.js \
+    vils_src/00-vils.js \
+    vils_src/01-checkeventfired.js
+
+cd /Users/ikki/DecaWave/SMIMS/ubuntu/norgay/www/js
+
+    <script src="/js/vils_src/00-vils.js?date=<?php echo $UPDATE_DATE;?>"></script>
+    <script src="/js/vils_src/01-checkeventfired.js?date=<?php echo $UPDATE_DATE;?>"></script>

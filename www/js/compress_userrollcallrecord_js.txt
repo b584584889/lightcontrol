@@ -1,0 +1,9 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file userrollcallrecord.min.js \
+    userrollcallrecord_src/00-userrollcallrecord.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/userrollcallrecord_src/00-userrollcallrecord.js"></script>

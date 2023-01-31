@@ -1,0 +1,17 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file bodyinfo.min.js \
+    bodyinfo_src/00-raphael.js \
+    bodyinfo_src/01-morris.js \
+    bodyinfo_src/02-jquery.knob.js \
+    bodyinfo_src/03-bodyinfo.js
+
+cd /Library/WebServer/Documents/js
+
+
+
+<script src="/js/bodyinfo_src/00-raphael.js"></script>
+<script src="/js/bodyinfo_src/01-morris.js"></script>
+<script src="/js/bodyinfo_src/02-jquery.knob.js"></script>
+<script src="/js/bodyinfo_src/03-bodyinfo.js"></script>

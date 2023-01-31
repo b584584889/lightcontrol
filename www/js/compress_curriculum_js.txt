@@ -1,0 +1,11 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file curriculum.min.js \
+    curriculum_src/00-curriculum.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/curriculum.min.js"></script>
+
+<script src="/js/curriculum_src/00-curriculum.js"></script>

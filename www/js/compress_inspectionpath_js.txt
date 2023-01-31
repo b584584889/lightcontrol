@@ -1,0 +1,14 @@
+//
+// compress inspectionpath JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file inspectionpath.min.js \
+    inspectionpath_src/00-bootstrap-timepicker.js \
+    inspectionpath_src/01-inspectionpath.js
+
+cd /Library/WebServer/Documents/js
+
+
+<!-- <script src="/js/inspectionpath.min.js?date=<?php echo $UPDATE_DATE;?>"></script> -->
+
+<script src="/js/inspectionpath_src/00-bootstrap-timepicker.js"></script>
+<script src="/js/inspectionpath_src/01-inspectionpath.js"></script>

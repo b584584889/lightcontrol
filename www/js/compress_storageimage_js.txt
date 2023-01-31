@@ -1,0 +1,18 @@
+//
+// compress sections JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file storageimage.min.js \
+    storageimage_src/00-jquery.dataTables.js \
+    storageimage_src/01-dataTables.bootstrap.js \
+    storageimage_src/02-uploadimage.js \
+    storageimage_src/03-storageimage.js
+
+cd /Library/WebServer/Documents/js
+
+
+<!-- <script src="/js/storageimage.min.js?date=<?php echo $UPDATE_DATE;?>"></script> -->
+
+<script src="/js/storageimage_src/00-jquery.dataTables.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storageimage_src/01-dataTables.bootstrap.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storageimage_src/02-uploadimage.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storageimage_src/03-storageimage.js?date=<?php echo $UPDATE_DATE;?>"></script>

@@ -1,0 +1,12 @@
+//
+// compress rollcall JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file rollcall.min.js \
+    rollcall_src/00-rollcall.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/rollcall.min.js"></script>
+
+<script src="/js/rollcall_src/00-rollcall.js"></script>

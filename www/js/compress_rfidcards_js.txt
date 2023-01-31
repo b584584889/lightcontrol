@@ -1,0 +1,9 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file rfidcards.min.js \
+    rfidcards_src/00-rfidcards.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/rfidcards_src/00-rfidcards.js"></script>

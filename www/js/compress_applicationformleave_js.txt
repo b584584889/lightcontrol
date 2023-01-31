@@ -1,0 +1,19 @@
+//
+// compress location JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file applicationformleave.min.js \
+    courses_src/03-bootstrap-timepicker.js \
+    courses_src/04-bootstrap-datepicker.js \
+    storagefile_src/02-uploadfile.js \
+    storageimage_src/02-uploadimage.js \
+    applicationformleave_src/00-applicationformleave.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/applicationformleave.min.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+<script src="/js/courses_src/03-bootstrap-timepicker.js"></script>
+<script src="/js/courses_src/04-bootstrap-datepicker.js"></script>
+<script src="/js/storagefile_src/02-uploadfile.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storageimage_src/02-uploadimage.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/applicationformleave_src/00-applicationformleave.js?date=<?php echo $UPDATE_DATE;?>"></script>

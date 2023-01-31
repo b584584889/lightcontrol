@@ -1,0 +1,19 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file bodyinfomanualinput.min.js \
+    bodyinfomanualinput_src/00-raphael.js \
+    bodyinfomanualinput_src/01-morris.js \
+    bodyinfomanualinput_src/02-jquery.knob.js \
+    bodyinfomanualinput_src/03-daterangepicker.js \
+    bodyinfomanualinput_src/04-bodyinfomanualinput.js
+
+
+    <script src="/js/bodyinfomanualinput_src/00-raphael.js?date=<?php echo $UPDATE_DATE;?>"></script>
+    <script src="/js/bodyinfomanualinput_src/01-morris.js?date=<?php echo $UPDATE_DATE;?>"></script>
+    <script src="/js/bodyinfomanualinput_src/02-jquery.knob.js?date=<?php echo $UPDATE_DATE;?>"></script>
+    <script src="/js/bodyinfomanualinput_src/03-daterangepicker.js?date=<?php echo $UPDATE_DATE;?>"></script>
+    <script src="/js/bodyinfomanualinput_src/04-bodyinfomanualinput.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+
+cd /Library/WebServer/Documents/js

@@ -1,0 +1,373 @@
+
+
+=================================================================================
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+xcode-select --install
+brew install mysql
+mysql_secure_installation
+New password:b78g5Sla-df
+mysql  -u root -p -h 127.0.0.1
+mysql> CREATE USER 'soccer'@'localhost' IDENTIFIED BY 'soccer@soccers2022cJgyRd';
+mysql> GRANT ALL PRIVILEGES ON `soccer\_%`.* TO 'soccer'@'localhost';
+mysql> REVOKE ALL PRIVILEGES ON *.*  FROM 'soccer'@'localhost';
+
+mysql> CREATE USER 'vils'@'localhost' IDENTIFIED BY 'vils@centeR2022h4gk3';
+mysql> GRANT ALL PRIVILEGES ON `vils\_%`.* TO 'vils'@'localhost';
+mysql> REVOKE ALL PRIVILEGES ON *.*  FROM 'vils'@'localhost';
+
+compile from source
+
+brew install cmake
+git clone https://github.com/mysql/mysql-connector-cpp.git
+cd mysql-connector-cpp
+git checkout 8.0
+git submodule update --init
+
+mkdir /Users/smims/MySQL/build
+cd /Users/smims/MySQL/build
+cmake /Users/smims/MySQL/mysql-connector-cpp -DCMAKE_INSTALL_PREFIX=/Users/smims/MySQL/mysql-connector-c++-8.0 -DBUILD_STATIC=ON -DWITH_JDBC=OFF -DWITH_BOOST=/opt/homebrew/opt/boost -DWITH_SSL=/opt/homebrew/opt/openssl@1.1 -DCMAKE_BUILD_TYPE=Release
+
+cmake --build . --config Release
+cmake --build . --target install --config Release
+
+
+
+https://getgrav.org/blog/macos-monterey-apache-multiple-php-versions
+
+brew install boost
+brew install openssl
+brew install libharu
+brew install libxml2
+
+sudo apachectl stop
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+brew install httpd
+
+brew services stop httpd
+brew services start httpd
+brew services restart httpd
+
+
+brew install php
+brew install shivammathur/php/php@7.4
+brew unlink php && brew link --overwrite --force php@7.4
+php -v
+
+https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps
+
+
+cd /opt/homebrew/etc/httpd/
+sudo cp httpd.conf httpd.conf.bak
+sudo vi /opt/homebrew/etc/httpd/httpd.conf
+--------------------------------
+Listen 80
+# enbale SSL
+LoadModule socache_shmcb_module libexec/apache2/mod_socache_shmcb.so
+LoadModule ssl_module libexec/apache2/mod_ssl.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+LoadModule php7_module /opt/homebrew/opt/php@7.4/lib/httpd/modules/libphp7.so
+#LoadModule php_module /opt/homebrew/opt/php/lib/httpd/modules/libphp.so
+
+User smims
+Group staff
+ServerName localhost
+
+#DocumentRoot "/opt/homebrew/var/www"
+#<Directory "/opt/homebrew/var/www">
+DocumentRoot "/Users/smims/soccer/www"
+<Directory "/Users/smims/soccer/www">
+   Order allow,deny
+   Allow from all
+   AllowOverride All
+   # New directive needed in Apache 2.4.3:
+   Require all granted
+</Directory>
+
+<IfModule dir_module>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+<FilesMatch \.php$>
+    SetHandler application/x-httpd-php
+</FilesMatch>
+--------------------------------
+
+brew install mosquitto
+brew services start mosquitto
+sudo mosquitto_passwd -c /opt/homebrew/etc/mosquitto/passwd admin
+Password:smims2017
+sudo mosquitto_passwd -b /opt/homebrew/etc/mosquitto/passwd TCSBMQTT 80435457
+sudo vi /opt/homebrew/etc/mosquitto/mosquitto.conf
+--------------------------------
+password_file /opt/homebrew/etc/mosquitto/passwd
+allow_anonymous false
+--------------------------------
+brew services restart mosquitto
+
+
+sudo vi /etc/my.cnf
+--------------------------------
+[mysqld]
+init_connect='SET collation_connection = utf8mb4_unicode_ci'
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+[client]
+default-character-set = utf8mb4
+--------------------------------
+brew services stop mysql
+brew services start mysql
+
+brew install rabbitmq
+
+
+sudo vi /Users/smims/Library/LaunchAgents/com.smims.soccer.plist
+--------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>KeepAlive</key>
+    <true/>
+    <key>Label</key>
+    <string>com.smims.soccer</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/smims/soccer/app/soccerapp</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/Users/smims/soccer/soccer.err</string>
+    <key>StandardOutPath</key>
+    <string>/Users/smims/soccer/soccer.log</string>
+</dict>
+</plist>
+--------------------------------
+
+vi start_soccer.sh
+--------------------------------
+#!/bin/sh
+launchctl load /Users/smims/Library/LaunchAgents/com.smims.soccer.plist
+launchctl start /Users/smims/Library/LaunchAgents/com.smims.soccer.plist
+--------------------------------
+
+
+vi stop_soccer.sh
+--------------------------------
+#!/bin/sh
+launchctl stop /Users/smims/Library/LaunchAgents/com.smims.soccer.plist
+launchctl unload /Users/smims/Library/LaunchAgents/com.smims.soccer.plist
+--------------------------------
+
+
+mysqldump -h 127.0.0.1 -u root -p soccer_vils_config_db > soccer_vils_config_db.sql
+mysqldump -h 127.0.0.1 -u root -p soccer_vils_fp_db > soccer_vils_fp_db.sql
+mysqldump -h 127.0.0.1 -u root -p soccer_vils_db > soccer_vils_db.sql
+mysqldump -h 127.0.0.1 -u root -p soccer_vils_ts_db > soccer_vils_ts_db.sql
+mysqldump -h 127.0.0.1 -u root -p soccer_vils_track_db > soccer_vils_track_db.sql
+
+
+mysql -u root -p soccer_vils_config_db < soccer_vils_config_db.sql
+mysql -u root -p soccer_vils_fp_db < soccer_vils_fp_db.sql
+mysql -u root -p soccer_vils_db < soccer_vils_db.sql
+mysql -u root -p soccer_vils_ts_db < soccer_vils_ts_db.sql
+mysql -u root -p soccer_vils_track_db < soccer_vils_track_db.sql
+
+b78g5Sla-df
+
+
+#define configsqldbname  "soccer_vils_config_db"
+#define sqldbname_fp  "soccer_vils_fp_db"
+#define sqldbname  "soccer_vils_db"
+#define sqldbname_ts  "soccer_vils_ts_db"
+#define tracksqldbname  "soccer_vils_track_db"
+
+
+sudo systemsetup -setcomputersleep Never
+sudo systemsetup -setrestartpowerfailure on
+sudo systemsetup -setrestartfreeze on -setrestartpowerfailure on
+
+
+
+
+=================================================================================
+sudo useradd -m -d /home/soccer soccer  -s /bin/bash
+
+
+wget http://repo.mysql.com/mysql-apt-config_0.8.22-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.22-1_all.deb
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql -u root -p
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'smims2017';
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.04 sec)
+mysql> exit
+
+sudo apt install libmysqlcppconn-dev
+sudo apt-get install libmysqlcppconn-dev libmysqlclient-dev libmysql++-dev
+sudo apt-get install libhpdf-dev
+sudo apt install libxml2-dev
+sudo apt-get install php-mysql
+sudo apt install php-mysqli
+
+sudo mysql -u root -p
+mysql>CREATE USER 'soccer'@'localhost' IDENTIFIED BY 'soccer@soccers2022cJgyRd';
+mysql>GRANT ALL PRIVILEGES ON soccer.* TO 'soccer'@'localhost' WITH GRANT OPTION;
+mysql>REVOKE ALL PRIVILEGES ON *.*  FROM 'soccer'@'localhost';
+mysql>FLUSH PRIVILEGES;
+mysql>use soccer_vils_db;
+mysql>update systemconfig set web_udp_port=28613 where CONFIG_ID = 1;
+mysql>update systemconfig set web_socket_port=8085 where CONFIG_ID = 1;
+
+
+
+sudo apt install -y mosquitto
+sudo mosquitto_passwd -c /etc/mosquitto/passwd admin
+Password:smims2017
+// 新增帳號
+sudo mosquitto_passwd -b /etc/mosquitto/passwd soccer 80435457
+
+sudo vi /etc/mosquitto/acl
+---------------
+user admin
+topic readwrite #
+user soccer
+topic GIOT-GW/UL/SOCCER/#
+---------------
+
+sudo vi /etc/mosquitto/mosquitto.conf
+---------------
+password_file /etc/mosquitto/passwd
+allow_anonymous false
+# ACL權限配置，常用語法如下：
+# 用戶限制：user <username>
+# 話題限制：topic [read|write] <topic>
+# 正則限制：pattern write sensor/%u/data
+acl_file /etc/mosquitto/acl
+---------------
+
+sudo systemctl restart mosquitto
+
+
+sudo apt-get install apache2
+sudo apt-get install php libapache2-mod-php
+sudo apt-get install php-memcached
+sudo apt-get install memcached
+sudo apt-get install php-gd
+
+
+設定 Apache
+sudo vi /etc/php/7.4/apache2/php.ini uncomment  "extension=php_mysqli.dll"
+
+
+sudo vi /etc/apache2/apache2.conf
+
+--------------------------------
+<Directory "/home/soccer/www">
+   Order allow,deny
+   Allow from all
+   # New directive needed in Apache 2.4.3:
+   Require all granted
+</Directory>
+--------------------------------
+
+$使用個別目錄
+$sudo vi /etc/apache2/sites-available/soccer.conf
+--------------------------------
+# Begin vhost record on the default HTTP port 80
+<VirtualHost *:8090>
+# This is the name of the vhost.
+ServerName soccer.smims.com.tw
+# These are alternative names for this same vhost.
+# We put the other domains here. They will all go to the same place.
+ServerAlias soccer.smims.com
+# Directory where the website code lives.
+DocumentRoot /home/soccer/www
+
+<Directory /home/soccer/www>
+    Options FollowSymLinks
+    AllowOverride All
+</Directory>
+
+</VirtualHost>
+--------------------------------
+
+sudo vi /etc/apache2/sites-enabled/000-default.conf
+--------------------------------
+<VirtualHost *:8090>
+       ServerName soccer.smims.com.tw
+       ServerAdmin webmaster@localhost
+       DocumentRoot /home/soccer/www
+</VirtualHost>
+--------------------------------
+
+sudo vi /etc/apache2/ports.conf
+--------------------------------
+Listen 8090
+
+<IfModule ssl_module>
+        Listen 443
+</IfModule>
+
+<IfModule mod_gnutls.c>
+        Listen 443
+</IfModule>
+--------------------------------
+
+
+sudo chown -R soccer:www-data /home/soccer/www
+
+sudo a2ensite soccer
+sudo phpenmod mysqli
+sudo systemctl restart apache2
+sudo systemctl status apache2
+
+sudo service apache2 reload
+sudo /etc/init.d/apache2 restart
+
+
+sudo apachectl -S
+
+sudo vi /etc/systemd/system/soccerapp.service
+
+---------------
+[Unit]
+Description=SMIMS soccerapp Service
+
+[Service]
+User=root
+WorkingDirectory=/home/soccer/app
+ExecStart=/home/soccer/app/soccerapp
+#SuccessExitStatus=143
+#TimeoutStopSec=10
+RemainAfterExit=no
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+---------------
+$sudo systemctl daemon-reload
+$sudo systemctl enable soccerapp.service
+$sudo systemctl start soccerapp
+$sudo systemctl status soccerapp
+$sudo systemctl stop soccerapp
+
+$vi start_soccerapp.sh
+---------------
+#!/bin/sh
+sudo systemctl enable soccerapp.service
+sudo systemctl start soccerapp
+---------------
+
+$vi stop_soccerapp.sh
+---------------
+#!/bin/sh
+sudo systemctl stop soccerapp
+sudo systemctl disable soccerapp
+---------------
+$ chmod 755 start_soccerapp.sh
+$ chmod 755 stop_soccerapp.sh

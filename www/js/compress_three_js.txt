@@ -1,0 +1,29 @@
+//
+// compress threemap JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file threemap.min.js \
+    three_src/03-OrbitControls.js \
+    three_src/04-Projector.js \
+    three_src/05-web3d.js \
+    three_src/06-DragControls.js \
+    three_src/07-TransformControls.js
+
+cd /Library/WebServer/Documents/js
+
+    <script src="/js/vils.min.js"></script>
+    <script src="/js/three.min.js"></script>
+    <script src="/js/threemap.min.js"></script>
+
+
+    <script src="/js/three_src/03-OrbitControls.js"></script>
+    <script src="/js/three_src/04-Projector.js"></script>
+    <script src="/js/three_src/05-web3d.js"></script>
+    <script src="/js/three_src/06-DragControls.js"></script>
+    <script src="/js/three_src/07-TransformControls.js"></script>
+
+
+    $(INSTALL_BIN) ./files/www/build/three_src/03-OrbitControls.js $(1)/www/build/three_src/03-OrbitControls.js
+	$(INSTALL_BIN) ./files/www/build/three_src/04-Projector.js $(1)/www/build/three_src/04-Projector.js
+	$(INSTALL_BIN) ./files/www/build/three_src/05-web3d.js $(1)/www/build/three_src/05-web3d.js
+	$(INSTALL_BIN) ./files/www/build/three_src/06-DragControls.js $(1)/www/build/three_src/06-DragControls.js
+	$(INSTALL_BIN) ./files/www/build/three_src/07-TransformControls.js $(1)/www/build/three_src/07-TransformControls.js

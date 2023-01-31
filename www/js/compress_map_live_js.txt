@@ -1,0 +1,27 @@
+//
+// compress map_live JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file map_live.min.js \
+    map_live_src/00-Leaflet.ImageOverlay.Rotated.js \
+    map_live_src/01-mapapi.js \
+    map_live_src/02-Indoor2DMap.js \
+    map_live_src/03-LiveMap.js \
+    map_live_src/04-fixnode.js
+
+
+old
+java -jar closure-compiler-v20160822.jar --js_output_file map_live.min.js \
+    map_live_src/00-leaflet-src.js \
+    map_live_src/01-mapapi.js \
+    map_live_src/02-Indoor2DMap.js \
+    map_live_src/03-LiveMap.js
+
+cd /Library/WebServer/Documents/js
+
+
+
+    <script src="/js/map_live_src/00-Leaflet.ImageOverlay.Rotated.js"></script>
+    <script src="/js/map_live_src/01-mapapi.js"></script>
+    <script src="/js/map_live_src/02-Indoor2DMap.js"></script>
+    <script src="/js/map_live_src/03-LiveMap.js"></script>
+    <script src="/js/map_live_src/04-fixnode.js"></script>

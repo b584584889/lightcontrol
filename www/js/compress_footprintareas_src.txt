@@ -1,0 +1,12 @@
+//
+// compress footprintcourses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file footprintareas.min.js \
+    footprintareas_src/00-daterangepicker.js \
+    footprintareas_src/01-footprintareas.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/footprintareas_src/00-daterangepicker.js"></script>
+<script src="/js/footprintareas_src/01-footprintareas.js"></script>

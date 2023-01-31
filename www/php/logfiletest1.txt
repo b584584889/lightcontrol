@@ -1,0 +1,1 @@
+0={"gateway_mac":"02:81:76:55:8d:19","device":{"id":1,"uniAddress":4,"state":{"level":186}}}

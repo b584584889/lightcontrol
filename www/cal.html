@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/css/formuladb.css" />
+    </head>
+    <body>
+        <div class="calculatorbox">
+            <div id="con_one_1" >
+                <div class="calculate">
+                    <div class="calculateformula">
+                        <img src="/images/Euclidean-distance.png" alt="Euclidean distance between two points in three-dimensional (3D) space  with Cartesian coordinates formula" id="mainformulapicture"/>
+                    </div>
+                    <div class="formulaparameter">
+                        <div class="calculatorleft">
+                            <span>Point1:(x,y,z)</span>
+                        </div>
+                        <div class="calculatorright">
+                            <span><input type="text" class ="calculatetext" id="parabox2" value="0" /></span>
+                            <span><input type="text" class ="calculatetext" id="parabox3" value="0" /></span>
+                            <span><input type="text" class ="calculatetext" id="parabox6" value="0" /></span>
+                        </div>
+                    </div>
+                    <div class="formulaparameter">
+                        <div class="calculatorleft">
+                            <span>Point2:(x,y,z)</span>
+                        </div>
+                        <div class="calculatorright">
+                            <span><input type="text" class ="calculatetext" id="parabox4" value="0" /></span>
+                            <span><input type="text" class ="calculatetext" id="parabox5" value="0" /></span>
+                            <span><input type="text" class ="calculatetext" id="parabox7" value="0" /></span>
+                        </div>
+                    </div>
+                    <div class="formulaparameter">
+                        <div class="calculatorleft">
+                            <span>distance</span>
+                        </div>
+                        <div class="calculatorright">
+                            <span><input type="text" class ="calculateresult" id="parabox1" readonly="readonly"/></span>
+                        </div>
+                    </div>
+                    <div class="formulaparameter">
+                        <div class="calculatorleft">
+                            <span>Precision</span>
+                        </div>
+                        <div class="calculatorright">
+                            <span>
+                                <select id="txtPlaces" class="calculateselect">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected="selected">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formulaparameter">
+                <input type="button"  class = "calculatebutton" name="calculate" value="Calculate" onclick="S2()"/>
+            </div>
+        </div>
+        <script type="text/javascript">   var units={}; var pbn={"parabox1":"d","parabox2":"x1","parabox3":"y1","parabox4":"x2","parabox5":"y2","parabox6":"z1","parabox7":"z2"}; var fjscode = "d=Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)+(z2-z1)*(z2-z1))";var pboxpre = "parabox";var paraselectprefix = "paraselect";var numparas = 7;var numresultpara = 1;function setprecision(v){   if (isNaN(v)) return v;   var str = trim(String(v));   if (str.indexOf(".")==-1) return v;    var txtp = document.getElementById("txtPlaces");   if (!txtp || !txtp.value) return v;   var n=txtp.value;   var f=parseFloat(v);   if (f>=1 || f<=-1) return f.toFixed(n);   return f.toPrecision(n);  }function trim(str){return str.replace(/^\s+|\s+$/g,"");} function $(id){return document.getElementById(id);}function convert(fromUnitKey, toUnitKey, val){     if (fromUnitKey == toUnitKey){return val;}       if (units[fromUnitKey] == undefined || units[toUnitKey] == undefined || Number(val) == "NaN") return null;   return setprecision(convertFromSI(toUnitKey, convertToSI(fromUnitKey, val)));  }function convertunit(i, t){  var v1 = t.oldValue;  var v2 = t.value;  var mi = document.getElementById(i);  var iv = mi.value;  if (iv == "") {return false;}  else {mi.value = convert(v1, v2, iv);}  }function convertToSI(k, v) {  if (Number(v) == 'NaN' || units[k] == undefined){return null;}  if (k == '1120001'){return v+273.15;}  if (k == '1120002'){return (v+459.67)/1.8;}  return units[k] * v;  }function convertFromSI(k, v) {  if (Number(v) == 'NaN' || units[k] == undefined){return null;}  if (k == '1120001'){return v-273.15;}  if (k == '1120002'){return v*1.8-459.67;}  return v/units[k];  }function S2(){      for (var i = 1; i <= numparas; i++) {   if (i != numresultpara) {    var pid = pboxpre + i;    var val = $(pid).value;    if (val == "" || isNaN(val)) {     alert("please enter a number for " + pbn[pid]);     return false;    }   }  }   var calstr = " ";  for (var i = 1; i <= numparas; i++) {   if (i != numresultpara) {    var pid = pboxpre + i;    var sid = paraselectprefix + i;    var u;    if ($(sid)) {     u = $(sid).options[$(sid).selectedIndex].value;     calstr += pbn[pid] + "=" + convertToSI(u, $(pid).value) + ";";    }    else {     calstr += pbn[pid] + "=" + $(pid).value + ";";    }   }  }  calstr += (fjscode + ";");  var result = eval(calstr);  var seid = paraselectprefix + numresultpara;  if ($(seid)) {   result = convertFromSI($(seid).options[$(seid).selectedIndex].value, result);  }  $(pboxpre + numresultpara).value = setprecision(result);  }function setCodeTab(m, n, tp, dp){   for (var i = 1; i <= n; i++) {    var ta = document.getElementById(tp + i);    var di = document.getElementById(dp + i);    ta.className = i == m ? "hover" : "";    di.style.display = i == m ? "block" : "none";   }  }function checkcomment(cmmtform){   return true;  }</script>
+    </body>
+</html>

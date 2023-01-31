@@ -1,0 +1,35 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file courses.min.js \
+    courses_src/fullcalendar/core/locales-all.min.js \
+    courses_src/fullcalendar/core/main.js \
+    courses_src/fullcalendar/interaction/main.js \
+    courses_src/fullcalendar/daygrid/main.js \
+    courses_src/fullcalendar/timegrid/main.js \
+    courses_src/fullcalendar/list/main.js \
+    courses_src/fullcalendar/core/locales-all.min.js \
+    courses_src/00-popper.js \
+    courses_src/01-tooltip.js \
+    courses_src/02-daterangepicker.js \
+    courses_src/03-bootstrap-timepicker.js \
+    courses_src/04-bootstrap-datepicker.js \
+    courses_src/05-courses.js \
+    courses_src/06-coursesapi.js
+
+
+    <script src="/js/courses_src/fullcalendar/core/locales-all.min.js"></script>
+    <script src="/js/courses_src/fullcalendar/core/main.js"></script>
+    <script src="/js/courses_src/fullcalendar/interaction/main.js"></script>
+    <script src="/js/courses_src/fullcalendar/daygrid/main.js"></script>
+    <script src="/js/courses_src/fullcalendar/timegrid/main.js"></script>
+    <script src="/js/courses_src/fullcalendar/list/main.js"></script>
+    <script src="/js/courses_src/00-popper.js"></script>
+    <script src="/js/courses_src/01-tooltip.js"></script>
+    <script src="/js/courses_src/02-daterangepicker.js"></script>
+    <script src="/js/courses_src/03-bootstrap-timepicker.js"></script>
+    <script src="/js/courses_src/04-bootstrap-datepicker.js"></script>
+    <script src="/js/courses_src/05-courses.js"></script>
+    <script src="/js/courses_src/06-coursesapi.js"></script>
+
+cd /Library/WebServer/Documents/js

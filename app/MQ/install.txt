@@ -1,0 +1,34 @@
+
+
+https://medium.com/macoclock/setup-rabbitmq-on-your-macos-in-3-mins-f27d3ce25f55
+
+brew install rabbitmq
+
+vi /usr/local/etc/rabbitmq/enabled_plugins
+change
+[rabbitmq_management,rabbitmq_stomp,rabbitmq_amqp1_0,rabbitmq_mqtt].
+to
+[rabbitmq_management,rabbitmq_stomp,rabbitmq_amqp1_0].
+
+vi /usr/local/etc/rabbitmq/rabbitmq-env.conf
+CONFIG_FILE=/usr/local/etc/rabbitmq/rabbitmq
+NODE_IP_ADDRESS=127.0.0.1
+NODENAME=rabbit@localhost
+RABBITMQ_LOG_BASE=/usr/local/var/log/rabbitmq
+
+
+https://build.opensuse.org/package/view_file/openSUSE:Leap:15.0:Update/rabbitmq-server/rabbitmq.config.example?expand=0
+
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
+sudo rabbitmq-server
+brew services start rabbitmq
+/usr/local/opt/rabbitmq/sbin/rabbitmqctl status
+/usr/local/opt/rabbitmq/sbin/rabbitmq-diagnostics status
+
+http://localhost:15672/#/
+
+guest:guest
+
+
+
+2021-02-05 14:22:02.526 [error] <0.31474.1> closing AMQP connection <0.31474.1> (127.0.0.1:65114 -> 127.0.0.1:5672):{handshake_timeout,handshake}

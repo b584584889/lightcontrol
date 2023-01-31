@@ -1,0 +1,13 @@
+//
+// compress settings JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file settings.min.js \
+    settings_src/00-settings.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/settings.min.js"></script>
+
+scp ../vilssettings.html root@192.168.8.1:/www
+scp settings.min.js root@192.168.8.1:/www/js

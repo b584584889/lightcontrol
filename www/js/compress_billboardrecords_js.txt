@@ -1,0 +1,11 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file billboardrecords.min.js \
+    billboardrecords_src/00-billboardrecords.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/billboardrecords.min.js"></script>
+
+<script src="/js/billboardrecords_src/00-billboardrecords.js"></script>

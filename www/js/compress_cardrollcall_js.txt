@@ -1,0 +1,13 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file cardrollcall.min.js \
+    cardrollcall_src/00-bootstrap-timepicker.js \
+    cardrollcall_src/01-bootstrap-datepicker.js \
+    cardrollcall_src/02-cardrollcall.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/cardrollcall_src/00-bootstrap-timepicker.js"></script>
+<script src="/js/cardrollcall_src/02-bootstrap-datepicker.js"></script>
+<script src="/js/cardrollcall_src/02-cardrollcall.js"></script>

@@ -1,0 +1,10 @@
+//
+// compress courses JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file curriculumschedule.min.js \
+    curriculumschedule_src/00-curriculumschedule.js
+
+
+    <script src="/js/curriculumschedule_src/00-curriculumschedule.js"></script>
+
+cd /Library/WebServer/Documents/js

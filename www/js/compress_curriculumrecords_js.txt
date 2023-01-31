@@ -1,0 +1,17 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file curriculumrecords.min.js \
+    curriculumrecords_src/00-bootstrap-timepicker.js \
+    curriculumrecords_src/01-bootstrap-datepicker.js \
+    storagefile_src/02-uploadfile.js \
+    curriculumrecords_src/02-curriculumrecords.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/curriculumrecords.min.js"></script>
+
+<script src="/js/curriculumrecords_src/00-bootstrap-timepicker.js"></script>
+<script src="/js/curriculumrecords_src/01-bootstrap-datepicker.js"></script>
+<script src="/js/storagefile_src/02-uploadfile.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/curriculumrecords_src/02-curriculumrecords.js"></script>

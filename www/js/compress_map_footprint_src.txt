@@ -1,0 +1,14 @@
+//
+// compress map_footprint JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file map_footprint.min.js \
+    map_footprint_src/00-leaflet.js \
+    map_footprint_src/01-leaflet.draw.js \
+    map_footprint_src/02-mapapi.js \
+    map_footprint_src/03-Indoor2DMap.js \
+    map_footprint_src/04-vis.min.js \
+    map_footprint_src/05-TagFootPrintCacheData.js \
+    map_footprint_src/06-Queue.js \
+    map_footprint_src/07-FootprintMap.js
+
+cd /Library/WebServer/Documents/js

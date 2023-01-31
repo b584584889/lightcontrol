@@ -1,0 +1,13 @@
+//
+// compress map_live JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file firefightinghistory.min.js \
+    firefightinghistory_src/00-Leaflet.ImageOverlay.Rotated.js \
+    firefightinghistory_src/01-Indoor2DMap.js \
+    firefightinghistory_src/02-history.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/firefightinghistory_src/00-Leaflet.ImageOverlay.Rotated.js"></script>
+<script src="/js/firefightinghistory_src/01-Indoor2DMap.js"></script>
+<script src="/js/firefightinghistory_src/02-history.js"></script>

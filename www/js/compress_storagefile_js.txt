@@ -1,0 +1,18 @@
+//
+// compress sections JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file storagefile.min.js \
+    storagefile_src/00-jquery.dataTables.js \
+    storagefile_src/01-dataTables.bootstrap.js \
+    storagefile_src/02-uploadfile.js \
+    storagefile_src/03-storagefile.js
+
+cd /Library/WebServer/Documents/js
+
+
+<!-- <script src="/js/storagefile.min.js?date=<?php echo $UPDATE_DATE;?>"></script> -->
+
+<script src="/js/storagefile_src/00-jquery.dataTables.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storagefile_src/01-dataTables.bootstrap.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storagefile_src/02-uploadfile.js?date=<?php echo $UPDATE_DATE;?>"></script>
+<script src="/js/storagefile_src/03-storagefile.js?date=<?php echo $UPDATE_DATE;?>"></script>

@@ -1,0 +1,9 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file cardrollcallrecord.min.js \
+    cardrollcallrecord_src/00-cardrollcallrecord.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/cardrollcallrecord_src/00-cardrollcallrecord.js"></script>

@@ -1,0 +1,13 @@
+//
+// compress inspectionhistory JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file inspectionhistory.min.js \
+    inspectionhistory_src/00-daterangepicker.js \
+    inspectionhistory_src/01-inspectionhistory.js
+
+cd /Library/WebServer/Documents/js
+
+
+
+<script src="/js/inspectionhistory_src/00-daterangepicker.js"></script>
+<script src="/js/inspectionhistory_src/01-inspectionhistory.js"></script>

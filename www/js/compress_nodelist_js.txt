@@ -1,0 +1,33 @@
+//
+// compress nodelist JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file nodelist.min.js \
+    nodelist_src/00-nodelist.js \
+    nodelist_src/01-nfclocator.js \
+    nodelist_src/02-nfccards.js \
+    nodelist_src/03-unknownnfccards.js \
+    nodelist_src/04-wifilocator.js \
+    nodelist_src/05-celllocator.js \
+    nodelist_src/06-edgecontrol.js \
+    nodelist_src/07-sensors.js \
+    rfidcards_src/00-rfidcards.js \
+    rfidcards_src/01-unknownrfidcards.js \
+    rfiddevices_src/00-rfiddevices.js
+
+t3B5WOfB
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/nodelist_src/00-nodelist.js"></script>
+<script src="/js/nodelist_src/01-nfclocator.js"></script>
+<script src="/js/nodelist_src/02-nfccards.js"></script>
+<script src="/js/nodelist_src/03-unknownnfccards.js"></script>
+<script src="/js/nodelist_src/04-wifilocator.js"></script>
+<script src="/js/nodelist_src/05-celllocator.js"></script>
+<script src="/js/nodelist_src/06-edgecontrol.js"></script>
+<script src="/js/nodelist_src/07-sensors.js"></script>
+<script src="/js/rfidcards_src/00-rfidcards.js"></script>
+<script src="/js/rfiddevices_src/00-rfiddevices.js"></script>
+<script src="/js/rfiddevices_src/01-unknownrfidcards.js"></script>
+
+scp nodelist.min.js root@192.168.8.1:/www/js

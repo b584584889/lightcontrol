@@ -1,0 +1,13 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file billboard.min.js \
+    billboard_src/00-billboard.js \
+    storageimage_src/02-uploadimage.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/billboard.min.js"></script>
+
+<script src="/js/billboard_src/00-billboard.js"></script>
+<script src="/js/storageimage_src/02-uploadimage.js?date=<?php echo $UPDATE_DATE;?>"></script>

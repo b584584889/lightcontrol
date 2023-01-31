@@ -1,0 +1,21 @@
+//
+// compress footprinttags JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file footprinttags.min.js \
+    footprinttags_src/00-daterangepicker.js \
+    footprinttags_src/01-Leaflet.ImageOverlay.Rotated.js \
+    footprinttags_src/02-simpleheat.js \
+    footprinttags_src/03-HeatLayer.js \
+    footprinttags_src/04-heatmap.js \
+    footprinttags_src/05-bootstrap-datepicker.js \
+    footprinttags_src/06-footprinttags.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/footprinttags_src/00-daterangepicker.js"></script>
+<script src="/js/footprinttags_src/01-Leaflet.ImageOverlay.Rotated.js"></script>
+<script src="/js/footprinttags_src/02-simpleheat.js"></script>
+<script src="/js/footprinttags_src/03-HeatLayer.js"></script>
+<script src="/js/footprinttags_src/04-heatmap.js"></script>
+<script src="/js/footprinttags_src/05-bootstrap-datepicker.js"></script>
+<script src="/js/footprinttags_src/06-footprinttags.js"></script>

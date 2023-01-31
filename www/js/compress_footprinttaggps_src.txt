@@ -1,0 +1,18 @@
+//
+// compress footprinttags JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file footprinttaggps.min.js \
+    footprinttaggps_src/00-Leaflet.ImageOverlay.Rotated.js \
+    footprinttaggps_src/01-simpleheat.js \
+    footprinttaggps_src/02-HeatLayer.js \
+    footprinttaggps_src/03-heatmap.js \
+    footprinttaggps_src/04-footprinttaggps.js
+
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/footprinttaggps_src/00-Leaflet.ImageOverlay.Rotated.js"></script>
+<script src="/js/footprinttaggps_src/01-simpleheat.js"></script>
+<script src="/js/footprinttaggps_src/02-HeatLayer.js"></script>
+<script src="/js/footprinttaggps_src/03-heatmap.js"></script>
+<script src="/js/footprinttaggps_src/04-footprinttaggps.js"></script>

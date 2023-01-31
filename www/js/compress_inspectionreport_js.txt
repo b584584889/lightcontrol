@@ -1,0 +1,15 @@
+//
+// compress inspectionrecord JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file inspectionreport.min.js \
+    inspectionreport_src/00-bootstrap-datepicker.js \
+    inspectionreport_src/01-inspectionreport.js
+
+cd /Library/WebServer/Documents/js
+
+
+
+<script src="/js/inspectionreport.min.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+<script src="/js/inspectionreport_src/00-bootstrap-datepicker.js"></script>
+<script src="/js/inspectionreport_src/01-inspectionreport.js"></script>

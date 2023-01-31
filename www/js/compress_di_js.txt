@@ -1,0 +1,12 @@
+//
+// compress JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file di.min.js \
+    di_src/00-di.js
+
+cd /Library/WebServer/Documents/js
+
+
+    <script src="/js/di.min.js?date=<?php echo $UPDATE_DATE;?>"></script>
+
+    <script src="/js/di_src/00-di.js?date=<?php echo $UPDATE_DATE;?>"></script>

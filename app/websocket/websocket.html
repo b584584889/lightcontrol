@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+  <meta charset="utf-8" />
+  <title>WebSocket Test</title>
+  <script language="javascript" type="text/javascript">
+
+
+  //===============================
+  //var wsUri = "ws://localhost:8083/websocket/tag_0410000000000026,0410000000000340_2D1531973179180j8teuD5A4A";
+  //var wsUri = "ws://localhost:8083/websocket/tag_4210000000001312,0610000000000022_2D1531973179180j8teuD5A4A_type|coord";
+  //var wsUri = "ws://175.181.35.22:8083/websocket/tag_0310000000000002,0610000000000022_2D1531973179180j8teuD5A4A_type|coord";
+  //var wsUri = "ws://175.181.35.22:8083/websocket/tag_0_2D1531973179180j8teuD5A4A";
+  // var wsUri = "ws://175.181.35.22:8083/websocket/tag_0_2D1531973179180j8teuD5A4A_type|sos";
+  var wsUri = "ws://175.181.35.22:8083/websocket/tag_0610000000000005_2D1531973179180j8teuD5A4A_type|coord";
+
+  //var wsUri = "ws://localhost:8083/websocket/xystudy_1_2D1531973179180j8teuD5A4A_type|coord";
+  // var wsUri = "ws://localhost:8083/websocket/xystudy_1_2D1531973179180j8teuD5A4A_type|power|powerAlert|coord";
+  //var wsUri = "ws://vils2019.ddns.net:8083/websocket/xystudy_1_2D1531973179180j8teuD5A4A_type|coord";
+  //var wsUri = "ws://127.0.0.1:8083/websocket/xystudy_1_2D1531973179180j8teuD5A4A_type|coord";
+
+
+  //===============================
+  //var wsUri = "ws://localhost:8083/websocket/tag_1,2";
+  //var wsUri = "ws://localhost:8083/websocket/tag_1,2_type|sos";
+  //var wsUri = "ws://localhost:8083/websocket/tag_1,2_type|sos|power";
+
+  //var wsUri = "ws://localhost:8083/websocket/prj_1,2,Tag011_type|sos|power";
+  //var wsUri = "ws://localhost:8083/websocket/prj_1,2_type|fenceAlert|sos|checkpointAlert";
+  // var wsUri = "ws://localhost:8083/websocket/prj_1,2_type|checkpointAlert";
+
+  //var wsUri = "ws://localhost:8083/websocket/tag_Tag011_type|sos|power|powerAlert|fenceAlert";
+  //var wsUri = "ws://localhost:8083/websocket/tag_Tag011_type|sos|powerAlert|fenceAlert";
+  //var wsUri = "ws://localhost:8083/websocket/tag_Tag011_type|coord";
+  //var wsUri = "ws://localhost:8083/websocket/tag_Tag0126";
+  //var wsUri = "ws://175.181.35.22:8083/websocket/tag_Tag0002_type|coord";
+  //var wsUri = "ws://localhost:8083/websocket/tag_0";
+  //var wsUri = "ws://localhost:8083/websocket/tag_0_type|fenceAlert|sos";
+  //===============================
+
+
+  var output;
+
+  function init()
+  {
+    output = document.getElementById("output");
+    testWebSocket();
+  }
+
+  function testWebSocket()
+  {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+  function onOpen(evt)
+  {
+    writeToScreen("CONNECTED");
+    doSend("WebSocket rocks");
+  }
+
+  function onClose(evt)
+  {
+    writeToScreen("DISCONNECTED");
+  }
+
+  function onMessage(evt)
+  {
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    //websocket.close();
+
+    var data = JSON.parse(evt.data);
+
+	//檢查消息類型
+	if(!data.hasOwnProperty('msgType'))
+    {
+   	    console.warn('error data:',data);
+   	    return;
+	}
+
+	if(data.msgType == 'sos')
+    {
+	    //如果消息類型為sos， 則為求救消息
+	    //sosAlert(data);
+        console.log('sos');
+	}
+    else
+    if(data.msgType == 'fenceAlert')
+    {
+	    //如果消息類型為fenceAlert， 則為標籤觸發了電子圍欄報警
+	    //fenceAlert(data);
+        console.log('fenceAlert');
+	}
+    else
+    if(data.msgType == 'coord')
+    {
+	    //如果消息類型為coord， 則為標籤定位消息
+	    //positionTag(data);
+        console.log('coord');
+	}
+    else
+    if(data.msgType == 'power')
+    {
+	    //如果消息類型為power， 則為標籤電量資訊
+	    //refreshTagPower (data);
+        console.log('power');
+	}
+    else
+    if(data.msgType == 'powerAlert')
+    {
+	    //如果消息類型為powerAlert， 則為標籤低電量報警
+	    //refreshTagPower (data);
+        console.log('powerAlert');
+	}
+
+
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function doSend(message)
+  {
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+  }
+
+  function writeToScreen(message)
+  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+  }
+
+  window.addEventListener("load", init, false);
+
+  </script>
+
+  <h2>WebSocket Test</h2>
+
+  <div id="output"></div>

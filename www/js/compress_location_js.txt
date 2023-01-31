@@ -1,0 +1,13 @@
+//
+// compress location JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file location.min.js \
+    location_src/00-location.js
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/location.min.js"></script>
+
+
+<script src="/js/location_src/00-location.js"></script>

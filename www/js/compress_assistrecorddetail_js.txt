@@ -1,0 +1,13 @@
+//
+// compress activity JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file assistrecorddetail.min.js \
+    assistrecorddetail_src/00-bootstrap-datepicker.js \
+    assistrecorddetail_src/01-assistrecorddetail.js
+
+cd /Library/WebServer/Documents/js
+
+<script src="/js/assistrecorddetail.min.js"></script>
+
+<script src="/js/assistrecorddetail_src/00-bootstrap-datepicker.js"></script>
+<script src="/js/assistrecorddetail_src/01-assistrecorddetail.js"></script>

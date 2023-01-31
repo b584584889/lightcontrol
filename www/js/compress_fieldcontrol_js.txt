@@ -1,0 +1,26 @@
+//
+// compress map_live JS
+//
+java -jar closure-compiler-v20160822.jar --js_output_file fieldcontrol.min.js \
+    fieldcontrol_src/00-raphael.js \
+    fieldcontrol_src/01-morris.js \
+    fieldcontrol_src/02-jquery.knob.js \
+    fieldcontrol_src/03-Leaflet.ImageOverlay.Rotated.js \
+    fieldcontrol_src/04-mapapi.js \
+    fieldcontrol_src/05-Indoor2DMap.js \
+    fieldcontrol_src/06-LiveMap.js\
+    fieldcontrol_src/07-fieldcontrol.js
+
+
+
+cd /Library/WebServer/Documents/js
+
+
+<script src="/js/fieldcontrol_src/00-raphael.js"></script>
+<script src="/js/fieldcontrol_src/01-morris.js"></script>
+<script src="/js/fieldcontrol_src/02-jquery.knob.js"></script>
+<script src="/js/fieldcontrol_src/03-Leaflet.ImageOverlay.Rotated.js"></script>
+<script src="/js/fieldcontrol_src/04-mapapi.js"></script>
+<script src="/js/fieldcontrol_src/05-Indoor2DMap.js"></script>
+<script src="/js/fieldcontrol_src/06-LiveMap.js"></script>
+<script src="/js/fieldcontrol_src/07-fieldcontrol.js?date=<?php echo $UPDATE_DATE;?>"></script>
